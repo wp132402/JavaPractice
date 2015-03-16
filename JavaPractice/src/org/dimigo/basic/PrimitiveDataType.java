@@ -32,5 +32,7 @@ public class PrimitiveDataType {
 		System.out.printf("키 : %s cm\n", h);
 		System.out.printf("몸무게 : %.1f kg\n", w);
 		System.out.printf("혈액형 : %c 형\n", bloodType);
+		
+		// Add comment
 	}
 }
