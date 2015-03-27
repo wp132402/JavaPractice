@@ -2,7 +2,7 @@ package org.dimigo.basic;
 
 public class Condition {
 	public static void main(String[] args) {
-		String carName = "고속버스";
+		String carName = "경운기";
 		int carType, sum = 0;
 		int l = 25;
 		
