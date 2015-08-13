@@ -31,4 +31,13 @@ public class Circle extends Figure {
 	protected double calcArea() {
 		return Math.PI * radius * radius;
 	}
+	
+	/* (non-Javadoc)
+	 * @see org.dimigo.inheritance.Figure#printCenter()
+	 */
+	@Override
+	protected void printCenter() {
+		System.out.print("원 ");
+		super.printCenter();
+	}
 }

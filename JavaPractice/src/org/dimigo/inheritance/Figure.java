@@ -31,4 +31,13 @@ public class Figure {
 	protected double calcArea() {
 		return 0.0;
 	}
+	
+	protected void printCenter() {
+		System.out.printf("중심좌표 : (%d, %d)\n", centerX, centerY);
+	}
+	
+	protected void moveFigure(int x, int y) {
+		this.centerX += x;
+		this.centerY += y;
+	}
 }
