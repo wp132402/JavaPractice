@@ -23,13 +23,13 @@ public class SmartPhoneTest {
 		System.out.println(ip);
 		ip.turnOn();
 		ip.pay();
-		ip.useSpecialFunction(ip);
+		ip.useSpecialFunction();
 		ip.turnOff();
 		
 		System.out.println(gp);
 		gp.turnOn();
 		gp.pay();
-		gp.useSpecialFunction(gp);
+		gp.useSpecialFunction();
 		gp.turnOff();
 	}
 }

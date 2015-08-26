@@ -42,13 +42,13 @@ public class SmartPhone {
 		
 	}
 	
-	public void useSpecialFunction(SmartPhone phone) {
-		if(phone instanceof IPhone) {
-			IPhone p = (IPhone)phone;
+	public void useSpecialFunction() {
+		if(this instanceof IPhone) {
+			IPhone p = (IPhone)this;
 			p.useAirDrop();
 		}
 		else {
-			Galaxy p = (Galaxy)phone;
+			Galaxy p = (Galaxy)this;
 			p.useWierlessCharging();
 		}
 	}
