@@ -4,7 +4,9 @@
 package org.dimigo.collection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <pre>
@@ -20,34 +22,40 @@ import java.util.List;
  */
 public class MelonChart {
 	public static void main(String[] args) {
-		List<Music> list = new ArrayList<Music>();
-		list.add(new Music("바람이나 좀 쐐", "개리"));
-		list.add(new Music("보통연애", "박경"));
-		list.add(new Music("취향저격", "iKON"));
+		Map<String, List<Music>> map = new HashMap<>();
 		
-		System.out.println("-- << 멜론 챠트 >> --");
-		printList(list);
+		List<Music> b = new ArrayList<Music>();
+		b.add(new Music("내 첫사랑", "베리굿"));
+		b.add(new Music("또 다시 사랑", "임창정"));
+		b.add(new Music("부산에 가면", "박진영"));
 		
-		System.out.println("-- << 2위 곡 추가 >> --");
-		list.add(1, new Music("레옹", "이유갓지"));
-		printList(list);
+		List<Music> d = new ArrayList<Music>();
+		d.add(new Music("커피", "유재환,김예림"));
+		d.add(new Music("다 잘될거야", "쿨"));
 		
-		System.out.println("-- << 3위 곡 변경 >> --");
-		list.set(2, new Music("맙소사", "황태지"));
-		printList(list);
+		map.put("발라드", b);
+		map.put("댄스", d);
 		
-		System.out.println("-- << 4위 곡 삭제 >> --");
-		list.remove(3);
-		printList(list);
-		
-		System.out.println("-- << 전체 리스트 삭제 >> --");
-		list.retainAll(list);
+		System.out.println("-------- << 멜론 장르별 챠트 >> --------");
+		printList(map);
+		System.out.println("-------- << 발라드 3위 곡 변경 >> --------");
+		map.get("발라드").set(2, new Music("지우고 지워도", "차수경"));
+		printList(map);
+		System.out.println("-------- << 발라드 1위 곡 삭제 >> --------");
+		map.get("발라드").remove(0);
+		printList(map);
+		System.out.println("-------- << 전체 리스트 삭제 >> --------");
+		map.remove("발라드");
+		map.remove("댄스");
 	}
 	
-	public static void printList(List<Music> list) {
-		for(int i = 0;i < list.size();i++) {
-			System.out.print((i + 1) + ". ");
-			System.out.println(list.get(i));
+	public static void printList(Map<String, List<Music>> map) {
+		for(String key : map.keySet()) {
+			System.out.println("[" + key + "]");
+			for(int i = 0;i < map.get(key).size();i++) {
+				System.out.print((i + 1) + ". ");
+				System.out.println(map.get(key).get(i));
+			}
 		}
 		System.out.println();
 	}
