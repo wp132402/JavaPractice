@@ -103,7 +103,6 @@ public class NaverSearch {
 	        
 	        try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File("files/movies.txt")))) {
 				writer.append(str);
-				writer.close();
 			}
 			catch (Exception e) {
 				e.printStackTrace();
